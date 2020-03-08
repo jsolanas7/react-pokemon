@@ -1,0 +1,23 @@
+.cardsList{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokedexContainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchBar{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 10px;
+}
+
+#searchBar input {
+    margin-right: 5px;
+}
