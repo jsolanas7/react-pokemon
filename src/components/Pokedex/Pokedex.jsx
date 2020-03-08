@@ -84,6 +84,7 @@ const Pokedex = () => {
                             urlImg={poke.urlImg}
                             name={poke.name}
                             type={poke.type}
+                            isFavs = {false}
                         />)
                     })
                     :

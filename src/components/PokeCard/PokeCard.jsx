@@ -5,48 +5,68 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 
-const PokeCard = ({ id, name, type, urlImg }) => {
+const PokeCard = ({ id, name, type, urlImg, isFavs, pokemones, setPokemones }) => {
     const [isActive, setActive] = useState({
         status: true
     });
-    useEffect( ()   => {
-        if(localStorage.getItem('pokemon'+id)!= null){
+    useEffect(() => {
+        if (localStorage.getItem('pokemon' + id) != null) {
             changeClass();
         }
         return () => {
             console.log('clean up card')
         }
-    }, []); 
+    }, []);
     const [styles, setStyles] = useState({
         classes: 'btn btn-primary',
         buttonText: 'Add favorite'
     });
     const setInLocalStorage = () => {
-        localStorage.setItem('pokemon'+id,JSON.stringify(id))
+        localStorage.setItem('pokemon' + id, JSON.stringify(id))
     }
     const removeFromLocalStorage = () => {
-        localStorage.removeItem('pokemon'+id);
+        localStorage.removeItem('pokemon' + id);
     }
     const changeClass = () => {
-        if (!isActive.status) {
-            setActive({
-                status: true
-            })
-            removeFromLocalStorage();
-            setStyles({
-                classes: 'btn btn-primary',
-                buttonText: 'Add favorite'
-            })
+        if (!isFavs) {
+            if (!isActive.status) {
+                setActive({
+                    status: true
+                })
+                removeFromLocalStorage();
+                setStyles({
+                    classes: 'btn btn-primary',
+                    buttonText: 'Add favorite'
+                })
+            } else {
+                setActive({
+                    status: false
+                })
+                setInLocalStorage();
+                setStyles({
+                    classes: 'btn btn-danger',
+                    buttonText: 'Remove'
+                })
+            }
         } else {
-            setActive({
-                status: false
-            })
-            setInLocalStorage();
-            setStyles({
-                classes: 'btn btn-danger',
-                buttonText: 'Remove'
-            })
+            if (!isActive.status) {
+                setActive({
+                    status: true
+                })
+                removeFromLocalStorage();
+                setPokemones(pokemones.filter(x => x.id != id));
+            }
+            else {
+                setActive({
+                    status: false
+                })
+                setStyles({
+                    classes: 'btn btn-danger',
+                    buttonText: 'Remove'
+                })
+            }
         }
+
     }
 
     return (

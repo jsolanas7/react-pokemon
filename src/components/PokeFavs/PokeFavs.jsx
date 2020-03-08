@@ -70,10 +70,13 @@ const PokeFavs = () => {
                         urlImg={poke.urlImg}
                         name={poke.name}
                         type={poke.type}
+                        isFavs = {true}
+                        pokemones = {pokemones}
+                        setPokemones = {setPokemones}
                     />)
                 })
                 :
-                <p>Cargando pokemones..</p>
+                <h3>No hay pokemones en favorito</h3>
             }
 
         </div>
