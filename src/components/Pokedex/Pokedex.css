@@ -1,9 +1,17 @@
-.cardsList{
+.containerPrincipal{
     display:flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
+.cardsList{
+    width: 87.71%;
+    margin: auto;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}
+
 
 .pokedexContainer{
     display:flex;

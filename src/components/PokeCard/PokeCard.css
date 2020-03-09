@@ -1,11 +1,16 @@
 .cardContainer{
     text-align: center;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     border-radius: 18px;
     width: 200px;
     padding: 5px;
     background-color: white;
     margin: 4px;
+    box-shadow: 10px 10px 15px -9px rgba(0,0,0,0.75);
+}
+
+.cardContainer:hover{
+    transform: scale(1.1);
 }
 
 .cardContainer img{
