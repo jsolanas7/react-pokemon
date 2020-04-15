@@ -32,7 +32,7 @@ const Hero = () => {
                         <p>Join our community to find Pokemon's news.</p>
                     </div>
                     <div>
-                        <button className='btn btn-primary'>View more</button>
+                        {/* <button className='btn btn-primary'>View more</button> */}
                     </div>
                 </div>
             </div>

@@ -7,8 +7,8 @@ const Header = () => {
 
     const getMenuItems = () => <ul>
         <Link to="/"><li>Home</li></Link>
-        <Link to="/"><li>History</li></Link>
-        <Link to="/"><li>Videos</li></Link>
+        {/* <Link to="/"><li>History</li></Link> */}
+        {/* <Link to="/"><li>Videos</li></Link> */}
         <Link to="/pokedex"><li>Pokedex</li></Link>
         <Link to="/pokefavs"><li>My Favs</li></Link>
     </ul>;
