@@ -59,7 +59,7 @@ const Pokedex = () => {
                         });
                     }
                 }
-
+        // setPokemones(arrayPokemones);
             } catch (exc) {
                 console.log(exc);
             }
